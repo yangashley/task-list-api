@@ -35,12 +35,12 @@ At submission time, no matter where you are, submit the project via Learn.
 This project is designed to fulfill the features described in detail in each wave. The tests are meant to guide your development.
 
 1. Setup
-1. Wave 1: CRUD for one model
-1. Wave 2: Using query params
-1. Wave 3: Creating custom endpoints
-1. Wave 4: Using an external web API
-1. Wave 5: Creating a second model
-1. Wave 6: Establishing a one-to-many relationship between two models
-1. Wave 7: Deployment
+1. [Wave 1: CRUD for one model](ada-project-docs/wave_01.md)
+1. [Wave 2: Using query params](ada-project-docs/wave_02.md)
+1. [Wave 3: Creating custom endpoints](ada-project-docs/wave_03.md)
+1. [Wave 4: Using an external web API](ada-project-docs/wave_04.md)
+1. [Wave 5: Creating a second model](ada-project-docs/wave_05.md)
+1. [Wave 6: Establishing a one-to-many relationship between two models](ada-project-docs/wave_06.md)
+1. [Wave 7: Deployment](ada-project-docs/wave_07.md)
 
 
