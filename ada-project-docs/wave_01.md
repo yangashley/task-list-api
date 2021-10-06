@@ -145,7 +145,6 @@ As a client, I want to be able to make a `PUT` request to `/tasks/1` when there 
 {
   "title": "Updated Task Title",
   "description": "Updated Test Description",
-  "completed_at": null
 }
 ```
 
@@ -164,6 +163,8 @@ and get this response:
 }
 ```
 
+Note that the update endpoint does update the `completed_at` attribute. This will be updated with custom endpoints implemented in Wave 03.
+
 ### Update Task: No Matching Task
 
 As a client, I want to be able to make a `PUT` request to `/tasks/1` when there are no matching tasks with this request body:
@@ -172,7 +173,6 @@ As a client, I want to be able to make a `PUT` request to `/tasks/1` when there 
 {
   "title": "Updated Task Title",
   "description": "Updated Test Description",
-  "completed_at": null
 }
 ```
 
