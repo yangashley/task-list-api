@@ -52,7 +52,7 @@ def get_task_from_user(msg = "Input the id of the task you would like to work wi
 def print_task(task):
     print_single_row_of_stars()
     print("title: ", task["title"])
-    print("description: ", task["title"])
+    print("description: ", task["description"])
     print("is_complete: ", task["is_complete"])
     print("id: ", task["id"])
     print_single_row_of_stars()
