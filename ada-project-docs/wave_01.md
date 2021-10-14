@@ -52,7 +52,7 @@ The following are required routes for wave 1. Feel free to implement the routes 
 
 ### CLI
 
-In addition to testing your code with pytest and postman, you can play test your code with the CLI (Command Line Interface) by running `python3 cli/main.py`. The flask server needs to be running to run the CLI.
+In addition to testing your code with pytest and postman, you can play test your code with the CLI (Command Line Interface) by running `python3 cli/main.py`. Ther flask server needs to be running to run the CLI.
 
 ### Create a Task: Valid Task With `null` `completed_at`
 

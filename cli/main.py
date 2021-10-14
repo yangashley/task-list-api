@@ -30,23 +30,10 @@ def make_choice():
     return choice
 
 def get_task_from_user(msg = "Input the id of the task you would like to work with: "):
-    task = None
-    tasks = list_tasks()
-    if not tasks:
-        print_stars("This option is not possible because there are no tasks.")
-        return task
-    count = 0
-    help_count = 3 #number of tries before offering assistance
-    while not task:
-        id = input(msg)
-        task = get_task(id)
-        if not task:
-            print_surround_stars("I cannot find that task.  Please try again.")
-        count += 1
-        if count >= help_count:
-            print("You seem to be having trouble selecting a task.  Please choose from the following list of tasks.")
-            print_all_tasks()
-        
+    id = input(msg)
+    task = get_task(id)
+    if not task:
+        print_surround_stars("I cannot find that task.")
     return task
 
 def print_task(task):
@@ -68,9 +55,9 @@ def print_all_tasks():
     print_single_row_of_stars()
 
 def print_surround_stars(sentence):
-    print_single_row_of_stars()
+    print("\n**************************\n")
     print(sentence)
-    print_single_row_of_stars()
+    print("\n**************************\n")
 
 def print_single_row_of_stars():
     print("\n**************************\n")
@@ -116,14 +103,14 @@ def run_cli():
                 print_all_tasks()
 
         elif choice=='6':
-            task = get_task_from_user("Input the id of the task you would like to mark complete: ")
+            task = get_task_from_user("Input the id of the task you would like mark complete: ")
             if task:
                 response = mark_complete(task["id"])
                 print("\nTask marked complete:")
                 print_task(response)
 
         elif choice=='7':
-            task = get_task_from_user("Input the id of the task you would like to mark incomplete: ")
+            task = get_task_from_user("Input the id of the task you would like mark incomplete: ")
             if task:
                 response = mark_incomplete(task["id"])
                 print("\nTask marked incomplete:")
