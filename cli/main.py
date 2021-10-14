@@ -30,10 +30,23 @@ def make_choice():
     return choice
 
 def get_task_from_user(msg = "Input the id of the task you would like to work with: "):
-    id = input(msg)
-    task = get_task(id)
-    if not task:
-        print_surround_stars("I cannot find that task.")
+    task = None
+    tasks = list_tasks()
+    if not tasks:
+        print_stars("This option is not possible because there are no tasks.")
+        return task
+    count = 0
+    help_count = 3 #number of tries before offering assistance
+    while not task:
+        id = input(msg)
+        task = get_task(id)
+        if not task:
+            print_surround_stars("I cannot find that task.  Please try again.")
+        count += 1
+        if count >= help_count:
+            print("You seem to be having trouble selecting a task.  Please choose from the following list of tasks.")
+            print_all_tasks()
+        
     return task
 
 def print_task(task):
@@ -55,12 +68,59 @@ def print_all_tasks():
     print_single_row_of_stars()
 
 def print_surround_stars(sentence):
-    print("\n**************************\n")
+    print_single_row_of_stars()
     print(sentence)
-    print("\n**************************\n")
+    print_single_row_of_stars()
 
 def print_single_row_of_stars():
     print("\n**************************\n")
+
+def create_task():
+    print("Great! Let's create a new task.")
+    title=input("What is the title of your task? ")
+    description=input("What is the description of your task? ")
+    response = create_task(title, description)
+    print_task(response)
+
+def view_task():
+    task = get_task_from_user("Input the id of the task you would like to select ")
+    if task: 
+        print("\nSelected Task:")
+        print_task(task)
+
+def edit_task():
+    task = get_task_from_user()
+    if task:
+        title=input("What is the new title of your task? ")
+        description=input("What is the new description of your task? ")
+        response = update_task(task["id"], title, description)
+        print("\nUpdated Task:")
+        print_task(response)
+
+def delete_task_ui():
+    task = get_task_from_user("Input the id of the task you would like to delete: ")
+    if task:
+        delete_task(task["id"])
+        print("\nTask has been deleted.")
+        print_all_tasks()
+
+def change_task_complete_status(status):
+    status_text = "complete"
+    if not status:
+        status_text = "incomplete"
+    task = get_task_from_user(f"Input the id of the task you would like to mark {status_text}: ")
+    if task:
+        if status:
+            response = mark_complete(task["id"])
+        else:
+            response = mark_incomplete(task["id"])
+        print(f"\nTask marked {status_text}:")
+        print_task(response)
+
+def delete_all_tasks():
+    for task in list_tasks():
+        delete_task(task["id"])
+        print_surround_stars("Deleted all tasks.")
 
 def run_cli():
     
@@ -72,58 +132,22 @@ def run_cli():
 
         if choice=='1':
             print_all_tasks()
-
         elif choice=='2':
-            print("Great! Let's create a new task.")
-            title=input("What is the title of your task? ")
-            description=input("What is the description of your task? ")
-            response = create_task(title, description)
-            print_task(response)
-
+            create_task()
         elif choice=='3':
-            task = get_task_from_user("Input the id of the task you would like to select ")
-            if task: 
-                print("\nSelected Task:")
-                print_task(task)
-
+            view_task()
         elif choice=='4':
-            task = get_task_from_user()
-            if task:
-                title=input("What is the new title of your task? ")
-                description=input("What is the new description of your task? ")
-                response = update_task(task["id"], title, description)
-                print("\nUpdated Task:")
-                print_task(response)
-
+            edit_task()
         elif choice=='5':
-            task = get_task_from_user("Input the id of the task you would like to delete: ")
-            if task:
-                delete_task(task["id"])
-                print("\nTask has been deleted.")
-                print_all_tasks()
-
+            delete_task_ui()
         elif choice=='6':
-            task = get_task_from_user("Input the id of the task you would like mark complete: ")
-            if task:
-                response = mark_complete(task["id"])
-                print("\nTask marked complete:")
-                print_task(response)
-
+            change_task_complete_status(True)
         elif choice=='7':
-            task = get_task_from_user("Input the id of the task you would like mark incomplete: ")
-            if task:
-                response = mark_incomplete(task["id"])
-                print("\nTask marked incomplete:")
-                print_task(response)
-
+            change_task_complete_status(False)
         elif choice=='8':
-            for task in list_tasks():
-                delete_task(task["id"])
-            print_surround_stars("Deleted all tasks.")
-
+            delete_all_tasks()
         elif choice=='9':
             list_options()
-        
         elif choice=='10':
             play=False
 
