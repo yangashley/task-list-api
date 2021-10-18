@@ -12,12 +12,13 @@ Our goal for this wave is to be able to create, read, update, and delete differe
 
 ## Writing Tests
 
-This wave requires you to write tests. 
+This wave requires you to complete **four** tests. 
 - The tests you need to write are scaffolded in the `test_wave_05.py` file. 
+  - These tests are currently skipped with `@pytest.mark.skip(reason="test to be completed by student")` and the function body has `pass` in it. Once you implement these tests you should remove the `skip` decorator and the `pass`.
 - For the tests you write, use the requirements in this document to guide your test writing. 
   - Pay attention to the exact shape of the expected JSON. Double-check nested data structures and the names of the keys for any mispellings.
-- You should also model your tests off of the Wave 01 tests for Tasks.
-- Some tests should use a fixture named `one_goal` that is defined in `tests/conftest.py`. This fixture saves a specific goal to the test database.
+- You can model your tests off of the Wave 01 tests for Tasks.
+- Some tests use a fixture named `one_goal` that is defined in `tests/conftest.py`. This fixture saves a specific goal to the test database.
 
 # Requirements
 
