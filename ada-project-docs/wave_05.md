@@ -18,7 +18,7 @@ This wave requires you to complete **four** tests.
 - For the tests you write, use the requirements in this document to guide your test writing. 
   - Pay attention to the exact shape of the expected JSON. Double-check nested data structures and the names of the keys for any mispellings.
 - You can model your tests off of the Wave 01 tests for Tasks.
-- Some tests use a fixture named `one_goal` that is defined in `tests/conftest.py`. This fixture saves a specific goal to the test database.
+- Some tests use a [fixture](https://docs.pytest.org/en/6.2.x/fixture.html) named `one_goal` that is defined in `tests/conftest.py`. This fixture saves a specific goal to the test database.
 
 # Requirements
 
