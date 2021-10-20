@@ -10,6 +10,16 @@ They contain a title to name the goal.
 
 Our goal for this wave is to be able to create, read, update, and delete different goals.
 
+## Writing Tests
+
+This wave requires you to complete **four** tests. 
+- The tests you need to write are scaffolded in the `test_wave_05.py` file. 
+  - These tests are currently skipped with `@pytest.mark.skip(reason="test to be completed by student")` and the function body has `pass` in it. Once you implement these tests you should remove the `skip` decorator and the `pass`.
+- For the tests you write, use the requirements in this document to guide your test writing. 
+  - Pay attention to the exact shape of the expected JSON. Double-check nested data structures and the names of the keys for any mispellings.
+- You can model your tests off of the Wave 01 tests for Tasks.
+- Some tests use a [fixture](https://docs.pytest.org/en/6.2.x/fixture.html) named `one_goal` that is defined in `tests/conftest.py`. This fixture saves a specific goal to the test database.
+
 # Requirements
 
 ## Goal Model
@@ -30,15 +40,6 @@ Goals should contain these attributes. Feel free to change the name of the `goal
 ## CRUD for Goals
 
 The following are required routes for wave 5. Feel free to implement the routes in any order within this wave.
-
-### Tips
-
-- Pay attention to the exact shape of the expected JSON. Double-check nested data structures and the names of the keys for any mispellings.
-- Use the tests in `tests/test_wave_05.py` to guide your implementation.
-- You may feel that there are missing tests and missing edge cases considered in this wave. This is intentional.
-  - You have fulfilled wave 5 requirements if all of the wave 5 tests pass.
-  - You are free to add additional features, as long as the wave 5 tests still pass. However, we recommend that you consider the future waves, first.
-- Some tests use a fixture named `one_goal` that is defined in `tests/conftest.py`. This fixture saves a specific goal to the test database.
 
 ### Create a Goal: Valid Goal
 
@@ -94,6 +95,8 @@ As a client, I want to be able to make a `GET` request to `/goals` when there ar
 []
 ```
 
+*This feature requires you to write a test.*
+
 ### Get One Goal: One Saved Goal
 
 As a client, I want to be able to make a `GET` request to `/goals/1` when there is at least one saved goal and get this response:
@@ -109,6 +112,8 @@ As a client, I want to be able to make a `GET` request to `/goals/1` when there 
 }
 ```
 
+*This feature requires you to write a test.*
+
 ### Get One Goal: No Matching Goal
 
 As a client, I want to be able to make a `GET` request to `/goals/1` when there are no matching goals and get this response:
@@ -116,6 +121,8 @@ As a client, I want to be able to make a `GET` request to `/goals/1` when there 
 `404 Not Found`
 
 No response body.
+
+*This feature requires you to write a test.*
 
 ### Update Goal
 
