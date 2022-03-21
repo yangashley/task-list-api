@@ -57,12 +57,11 @@ def test_get_task_not_found(client):
     assert response_body == None
 
 
-def test_create_task_with(client):
+def test_create_task(client):
     # Act
     response = client.post("/tasks", json={
         "title": "A Brand New Task",
         "description": "Test Description",
-        # "completed_at": None
     })
     response_body = response.get_json()
 
@@ -150,8 +149,7 @@ def test_delete_task_not_found(client):
 def test_create_task_must_contain_title(client):
     # Act
     response = client.post("/tasks", json={
-        "description": "Test Description",
-        # "completed_at": None
+        "description": "Test Description"
     })
     response_body = response.get_json()
 
@@ -167,8 +165,7 @@ def test_create_task_must_contain_title(client):
 def test_create_task_must_contain_description(client):
     # Act
     response = client.post("/tasks", json={
-        "title": "A Brand New Task",
-        # "completed_at": None
+        "title": "A Brand New Task"
     })
     response_body = response.get_json()
 
@@ -180,19 +177,3 @@ def test_create_task_must_contain_description(client):
     }
     assert Task.query.all() == []
 
-
-# def test_create_task_must_contain_completed_at(client):
-#     # Act
-#     response = client.post("/tasks", json={
-#         "title": "A Brand New Task",
-#         "description": "Test Description"
-#     })
-#     response_body = response.get_json()
-
-#     # Assert
-#     assert response.status_code == 400
-#     assert "details" in response_body
-#     assert response_body == {
-#         "details": "Invalid data"
-#     }
-#     assert Task.query.all() == []
