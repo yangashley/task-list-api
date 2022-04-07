@@ -139,4 +139,4 @@ then I get this response:
 
 `404 Not Found`
 
-No response body.
+You may chose the response body.

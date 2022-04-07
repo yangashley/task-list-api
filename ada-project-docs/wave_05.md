@@ -114,15 +114,6 @@ As a client, I want to be able to make a `GET` request to `/goals/1` when there 
 
 *This feature requires you to write a test.*
 
-### Get One Goal: No Matching Goal
-
-As a client, I want to be able to make a `GET` request to `/goals/1` when there are no matching goals and get this response:
-
-`404 Not Found`
-
-No response body.
-
-*This feature requires you to write a test.*
 
 ### Update Goal
 
@@ -147,22 +138,6 @@ and get this response:
 }
 ```
 
-### Update Goal: No Matching Goal
-
-As a client, I want to be able to make a `PUT` request to `/goals/1` when there are no matching goals with this request body:
-
-```json
-{
-  "title": "Updated Goal Title"
-}
-```
-
-and get this response:
-
-`404 Not Found`
-
-No response body
-
 ### Delete Goal: Deleting a Goal
 
 As a client, I want to be able to make a `DELETE` request to `/goals/1` when there is at least one saved goal and get this response:
@@ -175,13 +150,19 @@ As a client, I want to be able to make a `DELETE` request to `/goals/1` when the
 }
 ```
 
-### Delete Goal: No Matching Goal
+### No matching Goal: Get, Update, and Delete
 
-As a client, I want to be able to make a `DELETE` request to `/goals/1` when there are no matching goals and get this response:
+As a client, if I make any of the following requests:
 
-`404 Not Found`
+  * `GET` `/goals/<goal_id>`
+  * `UPDATE` `/goals/<goal_id>`
+  * `DELETE` `/goals/<goal_id>`
 
-No response body.
+and there is no existing goal with `goal_id`
+
+The response code should be `404`.
+
+You may chose the response body.
 
 ### Create a Goal: Invalid Goal With Missing Title
 
