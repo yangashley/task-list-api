@@ -133,14 +133,6 @@ As a client, I want to be able to make a `GET` request to `/tasks/1` when there 
 }
 ```
 
-### Get One Task: No Matching Task
-
-As a client, I want to be able to make a `GET` request to `/tasks/1` when there are no matching tasks and get this response:
-
-`404 Not Found`
-
-No response body.
-
 ### Update Task
 
 As a client, I want to be able to make a `PUT` request to `/tasks/1` when there is at least one saved task with this request body:
@@ -169,23 +161,6 @@ and get this response:
 
 Note that the update endpoint does update the `completed_at` attribute. This will be updated with custom endpoints implemented in Wave 03.
 
-### Update Task: No Matching Task
-
-As a client, I want to be able to make a `PUT` request to `/tasks/1` when there are no matching tasks with this request body:
-
-```json
-{
-  "title": "Updated Task Title",
-  "description": "Updated Test Description",
-}
-```
-
-and get this response:
-
-`404 Not Found`
-
-No response body
-
 ### Delete Task: Deleting a Task
 
 As a client, I want to be able to make a `DELETE` request to `/tasks/1` when there is at least one saved task and get this response:
@@ -198,13 +173,22 @@ As a client, I want to be able to make a `DELETE` request to `/tasks/1` when the
 }
 ```
 
-### Delete Task: No Matching Task
+### No matching Task: Get, Update, and Delete
 
-As a client, I want to be able to make a `DELETE` request to `/tasks/1` when there are no matching tasks and get this response:
+As a client, if I make any of the following requests:
 
-`404 Not Found`
+  * `GET` `/tasks/<task_id>`
+  * `UPDATE` `/tasks/<task_id>`
+  * `DELETE` `/tasks/<task_id>`
 
-No response body.
+and there is no exiting task with `task_id`
+
+The response code should be `404`.
+
+You may chose the response body.
+
+Make sure to complete the tests for non-existing tasks to check that the correct response body is returned.
+ 
 
 ### Create a Task: Invalid Task With Missing Data
 
