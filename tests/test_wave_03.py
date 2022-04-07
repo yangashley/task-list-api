@@ -121,7 +121,12 @@ def test_mark_complete_missing_task(client):
 
     # Assert
     assert response.status_code == 404
-    assert response_body == None
+     
+    raise Exception("Complete test with assertion about response body")
+    #*****************************************************************
+    #**Complete test with assertion about response body***************
+    #*****************************************************************
+
 
 
 def test_mark_incomplete_missing_task(client):
@@ -131,7 +136,11 @@ def test_mark_incomplete_missing_task(client):
 
     # Assert
     assert response.status_code == 404
-    assert response_body == None
+    
+    raise Exception("Complete test with assertion about response body")
+    #*****************************************************************
+    #**Complete test with assertion about response body***************
+    #*****************************************************************
 
 
 # Let's add this test for creating tasks, now that
