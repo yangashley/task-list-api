@@ -97,8 +97,6 @@ As a client, I want to be able to make a `GET` request to `/goals` when there ar
 []
 ```
 
-*This feature requires you to write a test.*
-
 ### Get One Goal: One Saved Goal
 
 As a client, I want to be able to make a `GET` request to `/goals/1` when there is at least one saved goal and get this response:
@@ -113,8 +111,6 @@ As a client, I want to be able to make a `GET` request to `/goals/1` when there 
   }
 }
 ```
-
-*This feature requires you to write a test.*
 
 
 ### Update Goal
