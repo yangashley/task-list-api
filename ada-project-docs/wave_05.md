@@ -12,8 +12,8 @@ Our goal for this wave is to be able to create, read, update, and delete differe
 
 ## Writing Tests
 
-This wave requires more testing writing. 
-- As with incomplete test in other waves, you should comment out the `Exception` when implementing the test.
+This wave requires more test writing. 
+- As with incomplete tests in other waves, you should comment out the `Exception` when implementing a test.
 - The tests you need to write are scaffolded in the `test_wave_05.py` file. 
   - These tests are currently skipped with `@pytest.mark.skip(reason="test to be completed by student")` and the function body has `pass` in it. Once you implement these tests you should remove the `skip` decorator and the `pass`.
 - For the tests you write, use the requirements in this document to guide your test writing. 
@@ -160,7 +160,9 @@ and there is no existing goal with `goal_id`
 
 The response code should be `404`.
 
-You may chose the response body.
+You may choose the response body.
+
+ Make sure to complete the tests for non-existing tasks to check that the correct response body is returned.
 
 ### Create a Goal: Invalid Goal With Missing Title
 

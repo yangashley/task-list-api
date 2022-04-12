@@ -127,6 +127,6 @@ When I send a `PATCH` request to `/tasks/1/mark_complete` or a `PATCH` request t
 
 Then I get a `404 Not Found`.
 
-You may chose the response body.
+You may choose the response body.
 
 Make sure to complete the tests for non-existing tasks to check that the correct response body is returned.

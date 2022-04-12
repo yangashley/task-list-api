@@ -139,4 +139,6 @@ then I get this response:
 
 `404 Not Found`
 
-You may chose the response body.
+You may choose the response body.
+
+ Make sure to complete the tests for non-existing tasks to check that the correct response body is returned.

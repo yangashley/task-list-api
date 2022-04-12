@@ -1,8 +1,8 @@
 ## Tests
 
-We will need to complete part of all of some of the tests for this project. If a test is incomplete, it will raise an `Exception`. You should comment out the `Exception` when implementing the test. 
+We will need to complete part – or all – of some of the tests for this project. If a test is incomplete, it will raise an `Exception`. You should comment out the `Exception` when implementing the test. 
 
-You may with to review details about how to run tests [here](https://github.com/AdaGold/viewing-party#details-about-how-to-run-tests).
+You may wish to review details about how to run tests [here](https://github.com/AdaGold/viewing-party#details-about-how-to-run-tests).
 
 Recall that it is always a good idea to search the file for any `@pytest.mark.skip` decorators you may have missed before moving to the next wave.
 

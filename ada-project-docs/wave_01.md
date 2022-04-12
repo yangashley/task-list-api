@@ -181,11 +181,11 @@ As a client, if I make any of the following requests:
   * `UPDATE` `/tasks/<task_id>`
   * `DELETE` `/tasks/<task_id>`
 
-and there is no exiting task with `task_id`
+and there is no existing task with `task_id`
 
 The response code should be `404`.
 
-You may chose the response body.
+You may choose the response body.
 
 Make sure to complete the tests for non-existing tasks to check that the correct response body is returned.
  
