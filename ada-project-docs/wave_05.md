@@ -12,13 +12,15 @@ Our goal for this wave is to be able to create, read, update, and delete differe
 
 ## Writing Tests
 
-This wave requires you to complete **four** tests. 
+This wave requires more test writing. 
+- As with incomplete tests in other waves, you should comment out the `Exception` when implementing a test.
 - The tests you need to write are scaffolded in the `test_wave_05.py` file. 
   - These tests are currently skipped with `@pytest.mark.skip(reason="test to be completed by student")` and the function body has `pass` in it. Once you implement these tests you should remove the `skip` decorator and the `pass`.
 - For the tests you write, use the requirements in this document to guide your test writing. 
   - Pay attention to the exact shape of the expected JSON. Double-check nested data structures and the names of the keys for any mispellings.
 - You can model your tests off of the Wave 01 tests for Tasks.
 - Some tests use a [fixture](https://docs.pytest.org/en/6.2.x/fixture.html) named `one_goal` that is defined in `tests/conftest.py`. This fixture saves a specific goal to the test database.
+
 
 # Requirements
 
@@ -95,8 +97,6 @@ As a client, I want to be able to make a `GET` request to `/goals` when there ar
 []
 ```
 
-*This feature requires you to write a test.*
-
 ### Get One Goal: One Saved Goal
 
 As a client, I want to be able to make a `GET` request to `/goals/1` when there is at least one saved goal and get this response:
@@ -112,17 +112,6 @@ As a client, I want to be able to make a `GET` request to `/goals/1` when there 
 }
 ```
 
-*This feature requires you to write a test.*
-
-### Get One Goal: No Matching Goal
-
-As a client, I want to be able to make a `GET` request to `/goals/1` when there are no matching goals and get this response:
-
-`404 Not Found`
-
-No response body.
-
-*This feature requires you to write a test.*
 
 ### Update Goal
 
@@ -147,22 +136,6 @@ and get this response:
 }
 ```
 
-### Update Goal: No Matching Goal
-
-As a client, I want to be able to make a `PUT` request to `/goals/1` when there are no matching goals with this request body:
-
-```json
-{
-  "title": "Updated Goal Title"
-}
-```
-
-and get this response:
-
-`404 Not Found`
-
-No response body
-
 ### Delete Goal: Deleting a Goal
 
 As a client, I want to be able to make a `DELETE` request to `/goals/1` when there is at least one saved goal and get this response:
@@ -175,13 +148,21 @@ As a client, I want to be able to make a `DELETE` request to `/goals/1` when the
 }
 ```
 
-### Delete Goal: No Matching Goal
+### No matching Goal: Get, Update, and Delete
 
-As a client, I want to be able to make a `DELETE` request to `/goals/1` when there are no matching goals and get this response:
+As a client, if I make any of the following requests:
 
-`404 Not Found`
+  * `GET` `/goals/<goal_id>`
+  * `UPDATE` `/goals/<goal_id>`
+  * `DELETE` `/goals/<goal_id>`
 
-No response body.
+and there is no existing goal with `goal_id`
+
+The response code should be `404`.
+
+You may choose the response body.
+
+ Make sure to complete the tests for non-existing tasks to check that the correct response body is returned.
 
 ### Create a Goal: Invalid Goal With Missing Title
 
