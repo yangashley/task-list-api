@@ -14,4 +14,4 @@ Review the [code coverage exercise](https://github.com/adaGold/code-coverage-exe
 
 `pytest --cov=app --cov-report html --cov-report term`
 
-**We should have greater than 95% code coverage in our model and route files.**
+There is not a specific code coverage percentage required for this project. Creating a code coverage report allows us to continue practicing the skill of reading the code coverage report and using it as part of our development workflow.
