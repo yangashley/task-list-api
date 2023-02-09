@@ -173,11 +173,13 @@ Our Slackbot token is an API key that needs to be protected.
 
 Include your Slackbot token in your code in an intentional way, following best practices about API keys in code bases.
 
-#### Tips
+### Requirement: Use Python package `requests` to make HTTP calls
 
-- Utilize the Python package `requests`!
-  - Remember to import this package
-  - Consider using the keyword argument `data`, `json`, and/or `headers`
+Remember to import this package
+
+Consider using the keyword argument `data`, `json`, and/or `headers`
+
+#### Tips
 - Remember to put your Slackbot token in your code in an intentional way, following best practices about API keys in code bases.
 - In order to get the value of an environment variable, use `os.environ.get()`, just as we used it for the database configuration.
 - Use your work from the Slack API documentation, the Slack tester, and Postman to guide your implementation.
