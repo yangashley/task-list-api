@@ -130,16 +130,17 @@ Open Postman and make a request that mimics the API call to Slack that we just t
 
 - Change the method to `POST`
 - Use this as the request URL: `https://slack.com/api/chat.postMessage`
-- In "Params," fill in the following values:
+- In "Body", select "raw" then change the content-type from "Text" to JSON.
+- After, fill in the following key/value pairs:
   - `channel`: `task-notifications`
   - `text`: Fill in a nice message
 
-![](assets/postman_test_query_params.png)
+![](assets/postman_request_body.png)
 
 - In "Headers," add this new key-value pair:
   - `Authorization`: `"Bearer xoxb-150..."`, where `xoxb-150...` is your full Slackbot token
 
-![](assets/postman_test_headers.png)
+![](assets/postman_headers.png)
 
 Press "Send" and see the Slack message come through!
 
@@ -190,6 +191,6 @@ Test and verify that your API sends an API call to the Slack web API by using Po
 
 Send `PATCH` requests to `localhost:5000/tasks/<book_id>/mark_complete` (use the ID of any existing task), and check if Slack messages were sent.
 
-![](assets/postman_feature.png)
+![](assets/postman_patch.png)
 
 ![](assets/slack_notification_feature.png)
