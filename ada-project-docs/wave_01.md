@@ -140,7 +140,7 @@ As a client, I want to be able to make a `PUT` request to `/tasks/1` when there 
 ```json
 {
   "title": "Updated Task Title",
-  "description": "Updated Test Description",
+  "description": "Updated Test Description"
 }
 ```
 
