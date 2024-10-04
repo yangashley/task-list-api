@@ -18,7 +18,7 @@ This wave requires more test writing.
   - These tests are currently skipped with `@pytest.mark.skip(reason="test to be completed by student")` and the function body has `pass` in it. Once you implement these tests you should remove the `skip` decorator and the `pass`.
 - For the tests you write, use the requirements in this document to guide your test writing. 
   - Pay attention to the exact shape of the expected JSON. Double-check nested data structures and the names of the keys for any mispellings.
-- You can model your tests off of the Wave 01 tests for Tasks.
+- You can model your tests off of the Wave 1 tests for Tasks.
 - Some tests use a [fixture](https://docs.pytest.org/en/6.2.x/fixture.html) named `one_goal` that is defined in `tests/conftest.py`. This fixture saves a specific goal to the test database.
 
 
@@ -28,9 +28,9 @@ This wave requires more test writing.
 
 There should be a `Goal` model that lives in `app/models/goal.py`.
 
-Goals should contain these attributes. Feel free to change the name of the `goal_id` column if you would like. **The tests require the title column to be named exactly** as `title`.
+Goals should contain these attributes. **The tests require the title column to be named exactly** as `title`.
 
-- `goal_id`: a primary key for each goal
+- `id`: a primary key for each goal
 - `title`: text to name the goal
 
 ### Tips
